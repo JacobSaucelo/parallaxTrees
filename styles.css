@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+}
+
+.frame {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* object-fit: cover; */
+  z-index: -1;
+  image-rendering: pixelated;
+}
+
+.background {
+  background: url("background.jpg") center center / cover no-repeat;
+  transform: translateZ(-8px) scale(2);
+}
+
+.foreground {
+  background-image: url("trees.png");
+  background-position: center bottom;
+  transform: translateZ(-4px) scale(1.5);
+}
+
+article {
+  font-size: 1.5rem;
+  padding: 2rem;
+  text-align: justify;
+  background-color: #333;
+  color: white;
+}
